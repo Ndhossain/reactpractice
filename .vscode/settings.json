@@ -1,6 +1,6 @@
 {
   // Theme
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Dracula Soft",
 
   // config related to code formatting
   "editor.defaultFormatter": "esbenp.prettier-vscode",

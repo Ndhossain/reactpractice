@@ -1,23 +1,16 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-// eslint-disable-next-line no-unused-vars
+ReactDOM.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+);
 
-const name = 'World';
-// eslint-disable-next-line react/prefer-stateless-function
-class Clock extends React.Component {
-    render() {
-        const proper = this.props;
-        return (
-            <h1 className="text">
-                <span>Hello {name}</span>
-                <br />
-                <span>The time is {new Date().toLocaleTimeString(proper.locale)}</span>
-            </h1>
-        );
-    }
-}
-
-const element = <Clock locale="bn-BD" />;
-
-ReactDom.render(element, document.getElementById('root'));
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
