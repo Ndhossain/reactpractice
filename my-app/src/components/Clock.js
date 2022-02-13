@@ -3,7 +3,7 @@ import React from 'react';
 const name = 'World';
 // eslint-disable-next-line react/prefer-stateless-function
 class Clock extends React.Component {
-    state = { date: new Date() };
+    state = { date: new Date(), locale: 'bn-Bd' };
 
     componentDidMount() {
         // eslint-disable-next-line react/no-unused-class-component-methods
@@ -16,19 +16,31 @@ class Clock extends React.Component {
         clearInterval(this.ClockTimer);
     }
 
+    // eslint-disable-next-line react/sort-comp
     tick() {
         this.setState({ date: new Date() });
     }
 
+    // eslint-disable-next-line class-methods-use-this
+    handleclick = () => {
+        this.setState({
+            locale: 'en-US',
+        });
+    };
+
     render() {
-        const proper = this.props;
-        const newDate = this.state;
+        const { date, locale } = this.state;
         return (
-            <h1 className="text">
-                <span>Hello {name}</span>
-                <br />
-                <span>The time is {newDate.date.toLocaleTimeString(proper.locale)}</span>
-            </h1>
+            <div>
+                <h1 className="text">
+                    <span>Hello {name}</span>
+                    <br />
+                    <span>The time is {date.toLocaleTimeString(locale)}</span>
+                </h1>
+                <button type="button" onClick={this.handleclick}>
+                    Click Here
+                </button>
+            </div>
         );
     }
 }
