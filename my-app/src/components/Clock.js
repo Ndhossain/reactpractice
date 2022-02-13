@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './button';
 
 const name = 'World';
 // eslint-disable-next-line react/prefer-stateless-function
@@ -23,13 +24,22 @@ class Clock extends React.Component {
 
     // eslint-disable-next-line class-methods-use-this
     handleclick = () => {
-        this.setState({
-            locale: 'en-US',
-        });
+        const { locale } = this.state;
+        // eslint-disable-next-line no-unused-expressions
+        locale === 'bn-Bd'
+            ? this.setState({
+                  locale: 'en-US',
+              })
+            : this.setState({
+                  locale: 'bn-Bd',
+              });
     };
 
     render() {
         const { date, locale } = this.state;
+        let buttonText;
+        // eslint-disable-next-line no-unused-expressions
+        locale === 'bn-Bd' ? (buttonText = 'ঘড়ি বদলান') : (buttonText = 'Change the clock');
         return (
             <div>
                 <h1 className="text">
@@ -37,9 +47,7 @@ class Clock extends React.Component {
                     <br />
                     <span>The time is {date.toLocaleTimeString(locale)}</span>
                 </h1>
-                <button type="button" onClick={this.handleclick}>
-                    Click Here
-                </button>
+                <Button change={this.handleclick} text={buttonText} />
             </div>
         );
     }
