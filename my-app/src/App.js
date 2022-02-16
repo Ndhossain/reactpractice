@@ -1,6 +1,8 @@
-import Clocklist from './components/Clocklist';
-import Form from './components/Form';
 import Calculator from './components/Calculator';
+import Clocklist from './components/Clocklist';
+import Emoji from './components/Emoji';
+import Form from './components/Form';
+import Text from './components/Text';
 
 function App() {
     const quantity = [1, 2, 3];
@@ -16,6 +18,9 @@ function App() {
             <br />
             <div>
                 <Calculator />
+            </div>
+            <div>
+                <Emoji>{({ addEmoji }) => <Text addEmoji={addEmoji} />}</Emoji>
             </div>
         </>
     );
