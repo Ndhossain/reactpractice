@@ -1,6 +1,7 @@
 import Calculator from './components/Calculator';
 import ClickCounter from './components/ClickCounter';
 import Clocklist from './components/Clocklist';
+import Counter from './components/Counter';
 import Emoji from './components/Emoji';
 import Form from './components/Form';
 import HoverCounter from './components/HoverCounter';
@@ -27,11 +28,19 @@ function App() {
             </div>
             <br />
             <div>
-                <ClickCounter />
+                <Counter>
+                    {(count, handleChange) => (
+                        <ClickCounter count={count} handleChange={handleChange} />
+                    )}
+                </Counter>
             </div>
             <br />
             <div>
-                <HoverCounter />
+                <Counter>
+                    {(count, handleChange) => (
+                        <HoverCounter count={count} handleChange={handleChange} />
+                    )}
+                </Counter>
             </div>
         </>
     );

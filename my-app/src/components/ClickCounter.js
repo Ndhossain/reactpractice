@@ -1,7 +1,4 @@
-import withCounter from './HOC/withCounter';
-
-function ClickCounter(props) {
-    const { count, handleChange } = props;
+export default function ClickCounter({ count, handleChange }) {
     return (
         <div>
             <button type="button" onClick={handleChange}>
@@ -10,5 +7,3 @@ function ClickCounter(props) {
         </div>
     );
 }
-
-export default withCounter(ClickCounter);
