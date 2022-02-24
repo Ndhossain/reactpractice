@@ -11,10 +11,11 @@ export default function MyComponent() {
 
     useEffect(() => {
         console.log('ticking');
-        setInterval(tick, 1000);
+        const controlInterval = setInterval(tick, 1000);
 
         return () => {
             console.log('hello i am on');
+            clearInterval(controlInterval);
         };
     }, []);
 

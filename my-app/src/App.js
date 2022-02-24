@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Calculator from './components/Calculator';
 import ClickCounter from './components/ClickCounter';
 import Clocklist from './components/Clocklist';
@@ -8,9 +9,11 @@ import HoverCounter from './components/HoverCounter';
 import MyComponent from './components/MyComponent';
 import Text from './components/Text';
 import Todo from './components/Todos';
+import MotherCompUCB from './components/MotherCompUCB';
 
 function App() {
     const quantity = [1, 2, 3];
+    const [show, setShow] = useState(true);
     return (
         <>
             <div>
@@ -50,7 +53,16 @@ function App() {
             </div>
             <br />
             <div>
-                <MyComponent />
+                <div>{show && <MyComponent />}</div>
+                <br />
+                <br />
+                <button type="button" onClick={() => setShow((prevShow) => !prevShow)}>
+                    {show ? 'Hide post' : 'Show post'}
+                </button>
+            </div>
+            <br />
+            <div>
+                <MotherCompUCB />
             </div>
         </>
     );
