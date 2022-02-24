@@ -5,7 +5,9 @@ import Counter from './components/Counter';
 import Emoji from './components/Emoji';
 import Form from './components/Form';
 import HoverCounter from './components/HoverCounter';
+import MyComponent from './components/MyComponent';
 import Text from './components/Text';
+import Todo from './components/Todos';
 
 function App() {
     const quantity = [1, 2, 3];
@@ -41,6 +43,14 @@ function App() {
                         <HoverCounter count={count} handleChange={handleChange} />
                     )}
                 </Counter>
+            </div>
+            <br />
+            <div>
+                <Todo />
+            </div>
+            <br />
+            <div>
+                <MyComponent />
             </div>
         </>
     );
